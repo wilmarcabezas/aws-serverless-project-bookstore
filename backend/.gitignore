@@ -8,4 +8,4 @@ jspm_packages
 # I prefer my own readme file
 readme.md
 
-backend/node_modules
+**/node_modules
