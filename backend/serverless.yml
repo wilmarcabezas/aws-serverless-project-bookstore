@@ -1,11 +1,14 @@
 service: backend
 
+# Definicion de la plataforma
 provider:
   name: aws
   runtime: nodejs12.x
   region: us-west-1
   stage: dev
 
+# Plugin necesario para AppSync: serverless-appsync-plugin
+# https://github.com/sid88in/serverless-appsync-plugin
 plugins:
    - serverless-appsync-plugin
 
@@ -36,6 +39,7 @@ custom:
         config: 
           tableName: !Ref booksTable
 
+# Forma de vincular otro yml ${file(nombre.yml)}
 resources:
  Resources:
   ${file(resources.yml)}

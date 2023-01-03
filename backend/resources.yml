@@ -14,6 +14,8 @@ booksTable:
         Value: "books-table"
 
 # Order table
+# GlobalSecondaryIndex: Permite realizar consultas no solo por la llave principal, en este caso es la union del libro y la fecha de la orden.
+# Projection: ALL indica que proyecta todos los atributos de la tabla.
 orderTable:
   Type: "AWS::DynamoDB::Table"
   Properties: 
@@ -46,6 +48,18 @@ orderTable:
         Value: "order-table"
 
 # Cognito user pool
+# AWS::Cognito::UserPool es un tipo de recurso de CloudFormation que representa un grupo de usuarios de Amazon Cognito. 
+# Un grupo de usuarios de Amazon Cognito es un *** directorio *** de usuarios que se puede utilizar para gestionar el registro y el inicio de sesión para aplicaciones móviles y web. 
+# Proporciona una forma fácil para que los usuarios se registren y accedan a tu aplicación, e incluye soporte integrado para la autenticación de factor múltiple (MFA)
+# y la integración con proveedores de identidad social como Facebook y Google.
+
+# En el contexto de un grupo de usuarios de Amazon Cognito, la propiedad UsernameAttributes se utiliza para especificar los atributos que pueden usarse como nombre de usuario para un usuario. 
+# El nombre de usuario es el nombre que los usuarios utilizan para iniciar sesión en el grupo de usuarios, y debe ser único dentro del grupo de usuarios.
+# La propiedad UsernameAttributes es una matriz de cadenas, y puede contener uno o más de los siguientes valores:
+  # phone_number: El número de teléfono del usuario.
+  # email: La dirección de correo electrónico del usuario.
+  # preferred_username: Un nombre de usuario preferido elegido por el usuario.
+
 cognitoUserPool:
   Type: "AWS::Cognito::UserPool"
   Properties: 
