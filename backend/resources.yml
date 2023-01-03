@@ -59,7 +59,9 @@ orderTable:
   # phone_number: El número de teléfono del usuario.
   # email: La dirección de correo electrónico del usuario.
   # preferred_username: Un nombre de usuario preferido elegido por el usuario.
-
+  
+# AWS::Cognito::UserPoolClient es un tipo de recurso de CloudFormation que representa un cliente de un grupo de usuarios de Amazon Cognito. 
+# Un cliente de un grupo de usuarios es una aplicación web o móvil que utiliza el grupo de usuarios para autenticar a sus usuarios.
 cognitoUserPool:
   Type: "AWS::Cognito::UserPool"
   Properties: 
@@ -67,7 +69,10 @@ cognitoUserPool:
       - "email"
     UserPoolName: "YouTubeBookstoreUserpool"
 
+
 # Cognito user pool client
+# AWS::Cognito::UserPoolClient es un tipo de recurso de CloudFormation que representa un cliente de un grupo de usuarios de Amazon Cognito. 
+# Un cliente de un grupo de usuarios es una aplicación web o móvil que utiliza el grupo de usuarios para autenticar a sus usuarios.
 cognitoUserPoolClient:
   Type: "AWS::Cognito::UserPoolClient"
   Properties: 
