@@ -18,10 +18,14 @@ custom:
     authenticationType: AMAZON_COGNITO_USER_POOLS
     additionalAuthenticationProviders:
       - authenticationType: AWS_IAM
+    # Se especifica la configuración de un grupo de usuarios de Cognito que se utilizará para autenticar a los usuarios de la aplicación de AppSync 
+    # y controlar quién tiene acceso a qué recursos y operaciones.
     userPoolConfig:
       awsRegion: us-west-1
       defaultAction: ALLOW
       userPoolId: !Ref cognitoUserPool
+    # mappingTemplates se utiliza para especificar qué plantillas VTL se utilizarán para procesar diferentes tipos de solicitudes GraphQL y cómo se obtienen o 
+    # modifican los datos en el backend de la aplicacion
     mappingTemplatesLocation: mapping-templates
     mappingTemplates: 
       - type: Query 

@@ -3,6 +3,8 @@ schema {
     mutation: Mutation
 }
 
+# Querys o consultas asociadas a la tabla Book.
+# 
 type Query {
     getBookById(bookId: ID!): Book! @aws_iam
     listBooks(limit: Int!, nextToken: String): BooksPage!
